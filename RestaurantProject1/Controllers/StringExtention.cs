@@ -11,7 +11,7 @@ namespace RestaurantProject1.Controllers
         public static string CapitalizeFirstChar(this string name)
         {
             return char.ToUpper(name[0]) + name.Substring(1);
-            //asdase
+            //next
         }
     }
 }
