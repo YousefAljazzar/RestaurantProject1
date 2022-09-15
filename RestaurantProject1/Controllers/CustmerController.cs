@@ -55,8 +55,8 @@ namespace RestaurantProject1.Controllers
         {
             Customer custmer = new()
             {
-                FirstName = custmerModel.FirstName,
-                LastName = custmerModel.LastName
+                FirstName = custmerModel.FirstName.ToTitleCase(),
+                LastName = custmerModel.LastName.ToTitleCase()
             };
 
             _restaurantdbContext.Customers.Add(custmer);
@@ -76,8 +76,8 @@ namespace RestaurantProject1.Controllers
                 return BadRequest("Invalid Requset");
             }
 
-            custmer.FirstName = custmerModel.FirstName;
-            custmer.LastName = custmerModel.LastName;
+            custmer.FirstName = custmerModel.FirstName.ToTitleCase();
+            custmer.LastName = custmerModel.LastName.ToTitleCase();
          
 
             _restaurantdbContext.Customers.Update(custmer);

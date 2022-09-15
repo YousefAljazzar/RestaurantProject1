@@ -50,7 +50,7 @@ namespace RestaurantProject1.Controllers
             var restaurent = _restaurantdbContext.Restaurants.Find(resMenu.RestaurantId);
             Restaurantmenu newRestaurant = new()
             {
-                MealName = resMenu.MealName,
+                MealName = resMenu.MealName.ToTitleCase(),
 
                 PriceInNis = resMenu.PriceInNis,
 
@@ -79,7 +79,7 @@ namespace RestaurantProject1.Controllers
                 return BadRequest("Invalid Requset");
             }
 
-            restaurantM.MealName = restaurantMenuModel.MealName;
+            restaurantM.MealName = restaurantMenuModel.MealName.ToTitleCase();
             restaurantM.PriceInNis = restaurantMenuModel.PriceInNis;
             restaurantM.Quantity = restaurantMenuModel.Quantity;
             restaurantM.PriceInUsd = restaurantM.PriceInNis / 3.50;

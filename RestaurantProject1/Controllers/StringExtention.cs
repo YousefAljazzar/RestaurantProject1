@@ -8,10 +8,10 @@ namespace RestaurantProject1.Controllers
 {
     public static class StringExtention
     {
-        public static string CapitalizeFirstChar(this string name)
+        public static string ToTitleCase(this string name)
         {
             return char.ToUpper(name[0]) + name.Substring(1);
-            //next
+           
         }
     }
 }

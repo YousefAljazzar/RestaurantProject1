@@ -8,6 +8,11 @@ namespace RestaurantProject1.Models
 {
     public partial class Customer
     {
+        public Customer()
+        {
+            Customerorders = new HashSet<Customerorder>();
+        }
+
         public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -19,5 +24,6 @@ namespace RestaurantProject1.Models
 
         [Timestamp]
         public DateTime UpdatedDateUTC { get; set; }
+        public virtual ICollection<Customerorder> Customerorders { get; set; }
     }
 }

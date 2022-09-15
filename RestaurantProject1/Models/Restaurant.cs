@@ -17,6 +17,7 @@ namespace RestaurantProject1.Models
         public string Name { get; set; }
         public string PhoneNumber { get; set; }
         public bool Archived { get; set; }
+
         [Timestamp]
         public DateTime CreatedDateUTC { get; set; }
 

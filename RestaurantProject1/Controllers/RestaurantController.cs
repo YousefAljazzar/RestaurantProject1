@@ -48,7 +48,7 @@ namespace RestaurantProject1.Controllers
         {
             Restaurant newRestaurant = new()
             {
-                Name = restaurant.Name,
+                Name = restaurant.Name.ToTitleCase(),
 
                 PhoneNumber = restaurant.PhoneNumber
 
@@ -71,7 +71,7 @@ namespace RestaurantProject1.Controllers
 
 
             restaurant.PhoneNumber = restaurantView.PhoneNumber;
-            restaurant.Name = restaurantView.Name;
+            restaurant.Name = restaurantView.Name.ToTitleCase();
 
             _restaurantdbContext.Restaurants.Update(restaurant);
             _restaurantdbContext.SaveChanges();
